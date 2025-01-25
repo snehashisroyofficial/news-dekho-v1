@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
 import NavBar from "../components/shared/Navbar/Navbar";
 import StoreProvider from "../StoreProvider";
+import FooterSection from "../components/shared/Footer/FooterSection";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,6 +36,7 @@ export default function RootLayout({
           <StoreProvider>
             <NavBar title="news prime times" />
             <div className="border-2 border-green-300">{children}</div>
+            <FooterSection />
           </StoreProvider>
         </div>
       </body>
