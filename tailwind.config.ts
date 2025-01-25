@@ -13,6 +13,10 @@ export default {
         foreground: "var(--foreground)",
       },
     },
+    fontFamily: {
+      "noto-serif-bengali": ["Noto Serif Bengali", "serif"],
+      roboto: ["Roboto"],
+    },
   },
   plugins: [],
 } satisfies Config;

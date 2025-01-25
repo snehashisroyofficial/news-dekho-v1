@@ -95,7 +95,7 @@ const NavBar: React.FC<TitleBarProps> = ({
             {/* Logo */}
             <div>
               <Link href={"/"}>
-                <div className="h-8 md:h-14">
+                <div className=" max-w-52">
                   <Image
                     src="/assets/images/logo.png"
                     height={1000}

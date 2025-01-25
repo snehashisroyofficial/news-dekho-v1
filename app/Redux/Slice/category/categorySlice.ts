@@ -17,7 +17,7 @@ interface Category {
   subtitle: string;
   timestamp: Timestamp; // Use proper Firestore Timestamp type
   title: string;
-  position:number;
+  position: number;
 }
 
 interface CategoriesState {

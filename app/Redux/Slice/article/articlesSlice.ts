@@ -18,7 +18,7 @@ interface Article {
 
   image: string;
 
-  timestamp: any;
+  timestamp: object;
   title: string;
 }
 
@@ -29,7 +29,7 @@ interface ArticlesState {
     id: string;
     image: string;
     title: string;
-    timestamp: any;
+    timestamp: object;
   }[];
   loading: boolean;
   error: string | null;
