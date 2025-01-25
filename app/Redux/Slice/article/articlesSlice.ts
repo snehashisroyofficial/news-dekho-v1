@@ -20,12 +20,17 @@ interface Article {
 
   timestamp: any;
   title: string;
-
 }
 
 // Define the state interface, only using the necessary fields for articles
 interface ArticlesState {
-  articles: { category:string; id: string; image: string; title: string; timestamp: any }[];
+  articles: {
+    category: string;
+    id: string;
+    image: string;
+    title: string;
+    timestamp: any;
+  }[];
   loading: boolean;
   error: string | null;
   lastVisible: any;

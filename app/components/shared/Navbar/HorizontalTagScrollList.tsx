@@ -3,10 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchTopCategories } from "../../../Redux/Slice/category/topCategorySlice";
 import { AppDispatch, RootState } from "../../../Redux/store";
 import React from "react";
+import { useRouter } from "next/navigation";
 
 const HorizontalTagScrollList = () => {
   const dispatch: AppDispatch = useDispatch();
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const { topCategories, loading, error } = useSelector(
     (state: RootState) => state.topCategory
@@ -19,7 +20,7 @@ const HorizontalTagScrollList = () => {
   if (error) return <div>Error: {error}</div>;
 
   const handleCategoryClick = (categoryId: string | number) => {
-    navigate(`/topic?id=${categoryId}`);
+    router.push(`/topic?id=${categoryId}`);
   };
 
   return (

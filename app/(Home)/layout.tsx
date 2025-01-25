@@ -1,7 +1,9 @@
-import type { Metadata } from "next";
+import type { Metadata as NextMetaData } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
 import NavBar from "../components/shared/Navbar/Navbar";
+
+import StoreProvider from "../StoreProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,7 +15,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
+export const metadata: NextMetaData = {
   title:
     "News Prime Times - Your Trusted Source for Breaking News, Analysis, and Headlines",
   description:
@@ -30,9 +32,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <NavBar title="news prime times" />
+        <StoreProvider>
+          <NavBar title="news prime times" />
 
-        {children}
+          {children}
+        </StoreProvider>
       </body>
     </html>
   );

@@ -27,7 +27,7 @@ const NavBar: React.FC<TitleBarProps> = ({
   onNotificationClick = () => {},
 }) => {
   const [openSidebar, setOpenSidebar] = useState(false);
-  const [getModal, closeModal] = useState < boolean > false;
+  const [getModal, closeModal] = useState<boolean>(false);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
