@@ -26,8 +26,16 @@ const ArticleSuggestion: React.FC = () => {
     };
   }, [dispatch]);
 
+  if (loading) {
+    return (
+      <div className="h-screen w-full flex justify-center items-center">
+        <CircularProgress />
+      </div>
+    );
+  }
+
   const handleArticleClick = (articleId: string) => {
-    router.push(`/article/${articleId}`);
+    router.push(`/article?id=${articleId}`);
   };
 
   return (

@@ -153,8 +153,13 @@ const NavBar: React.FC<TitleBarProps> = ({
             </IconButton>
 
             <div>
-              <Link to={"/"}>
-                <img src={logo} alt="news prime times" />
+              <Link href={"/"}>
+                <Image
+                  src="/assets/images/logo.png"
+                  height={1000}
+                  width={1000}
+                  alt="logo"
+                />
               </Link>
             </div>
 

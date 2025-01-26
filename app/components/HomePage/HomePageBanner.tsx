@@ -95,7 +95,7 @@ const HomePageBanner: React.FC = () => {
 
   //   global link
   const handleArticleClick = (id: string) => {
-    router.push(`/article/${id}`);
+    router.push(`/article?id=${id}`);
   };
 
   if (loading) {

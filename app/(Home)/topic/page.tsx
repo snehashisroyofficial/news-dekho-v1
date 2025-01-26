@@ -116,7 +116,7 @@ const Topic: React.FC = () => {
   };
 
   const handleArticleClick = (id: string) => {
-    router.push(`/article/${id}`);
+    router.push(`/article?id=${id}`);
   };
 
   if (loading) {
@@ -127,7 +127,7 @@ const Topic: React.FC = () => {
     );
   }
 
-  if (articles.length === 0) {
+  if (!loading && articles.length === 0) {
     return (
       <div className="h-screen w-full flex flex-col justify-center items-center gap-4 text-center">
         <h2 className="font-semibold text-xl lg:text-4xl">

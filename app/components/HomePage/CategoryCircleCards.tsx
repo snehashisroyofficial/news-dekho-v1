@@ -49,7 +49,7 @@ const CategoryCircleCards: React.FC = () => {
             alt={category.title}
             height={1000}
             width={1000}
-            className="object-cover rounded-full"
+            className="object-cover rounded-full border-2 border-slate-200"
           />
 
           <Typography

@@ -86,18 +86,18 @@ const CategoryView: React.FC = () => {
   };
 
   const handleArticleClick = (articleId: string) => {
-    router.push(`/article/${articleId}`);
+    router.push(`/article?id=${articleId}`);
   };
 
   if (loading) {
     return (
-      <div className="h-screen text-2xl font-bold w-full flex justify-center items-center">
-        লোডিং হচ্ছে...
+      <div className="h-screen w-full flex justify-center items-center">
+        <CircularProgress />
       </div>
     );
   }
 
-  if (articles.length === 0) {
+  if (!loading && articles.length === 0) {
     return (
       <div className="h-screen  w-full flex flex-col justify-center items-center gap-4 text-center">
         <h2 className="font-semibold text-xl lg:text-4xl">

@@ -47,7 +47,7 @@ const TopTopics = ({ topicTitle1, topicTitle2 }) => {
   }, [dispatch, topCategories]);
 
   const handleArticleClick = (articleId: string) => {
-    router.push(`/article/${articleId}`);
+    router.push(`/article?id=${articleId}`);
   };
 
   return (

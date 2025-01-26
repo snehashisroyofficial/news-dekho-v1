@@ -1,7 +1,7 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { collection, getDocs, query, orderBy, limit } from 'firebase/firestore';
-import { db } from '../../../firebase/firebaseConfig'; 
-import { FirebaseError } from 'firebase/app';
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { collection, getDocs, query, orderBy, limit } from "firebase/firestore";
+import { db } from "../../../firebase/firebaseConfig";
+import { FirebaseError } from "firebase/app";
 
 interface Article {
   id: string;
@@ -14,7 +14,7 @@ interface Article {
   tag: string;
   tagId: string;
   tagName: string;
-  timestamp: any; 
+  timestamp: any;
   title: string;
   topic: string;
   topicId: string;
@@ -33,16 +33,15 @@ const initialState: BakingArticlesState = {
   error: null,
 };
 
-
 export const fetchTop3Articles = createAsyncThunk(
-  'bakingArticles/fetchTop3Articles',
+  "bakingArticles/fetchTop3Articles",
   async (_, { rejectWithValue }) => {
     try {
       const q = query(
-        collection(db, 'articles'),
-      
-        orderBy('timestamp', 'desc'),
-        limit(3)
+        collection(db, "articles"),
+
+        orderBy("timestamp", "desc"),
+        limit(20)
       );
 
       const articlesSnapshot = await getDocs(q);
@@ -64,13 +63,13 @@ export const fetchTop3Articles = createAsyncThunk(
       if (error instanceof FirebaseError) {
         return rejectWithValue(error.message);
       }
-      return rejectWithValue('Failed to fetch articles');
+      return rejectWithValue("Failed to fetch articles");
     }
   }
 );
 
 const bakingArticlesSlice = createSlice({
-  name: 'bakingArticles',
+  name: "bakingArticles",
   initialState,
   reducers: {},
   extraReducers: (builder) => {
@@ -91,7 +90,10 @@ const bakingArticlesSlice = createSlice({
 });
 
 export default bakingArticlesSlice.reducer;
-function where(arg0: string, arg1: string, arg2: string): import("@firebase/firestore").QueryCompositeFilterConstraint {
-    throw new Error('Function not implemented.');
+function where(
+  arg0: string,
+  arg1: string,
+  arg2: string
+): import("@firebase/firestore").QueryCompositeFilterConstraint {
+  throw new Error("Function not implemented.");
 }
-

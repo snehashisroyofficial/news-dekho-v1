@@ -92,8 +92,16 @@ const RecentPostComponent: React.FC = () => {
     setSelectedArticle(null);
   };
 
+  if (loading) {
+    return (
+      <div className="h-screen w-full flex justify-center items-center">
+        <CircularProgress />
+      </div>
+    );
+  }
+
   const handleArticleClick = (id: string) => {
-    router.push(`/article/${id}`);
+    router.push(`/article?id=${id}`);
   };
 
   if (error) return <Alert severity="error">{error}</Alert>;
