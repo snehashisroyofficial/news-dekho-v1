@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { use, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   CircularProgress,
@@ -22,13 +22,14 @@ import Image from "next/image";
 import ArticleSuggestion from "@/app/components/ArticleSugestion/ArticleSuggestion";
 import RecentPostComponent from "@/app/components/ArticleSugestion/RecentPostComponent";
 
-const page: React.FC = ({ params }) => {
+const Page: React.FC = ({ params }) => {
   const getCurrentUrl = () => {
     return window.location.href;
   };
 
-  const id = params.articlefullview;
-
+  const { articlefullview } = params;
+  // const unwrappedParams = use(params);
+  const id = articlefullview;
   console.log("here is id", id);
 
   const router = useRouter();
@@ -43,14 +44,6 @@ const page: React.FC = ({ params }) => {
       dispatch(fetchFullViewArticle(id));
     }
   }, [id, dispatch]);
-
-  if (loading) {
-    return (
-      <div className="flex justify-center items-center h-screen w-full">
-        <h1 className="font-noto-serif-bengali text-2xl">লোড হচ্ছে ......</h1>
-      </div>
-    );
-  }
 
   if (error) {
     return <Alert severity="error">{error}</Alert>;
@@ -192,7 +185,7 @@ const page: React.FC = ({ params }) => {
                 className="flex items-center gap-2 p-2 w-fit cursor-pointer "
               >
                 <h2 className="font-bold">টপিক : </h2>
-                <p className="">{article.topic}</p>
+                <p>{article.topic}</p>
               </div>
 
               {/* share button */}
@@ -239,4 +232,4 @@ const page: React.FC = ({ params }) => {
   );
 };
 
-export default page;
+export default Page;

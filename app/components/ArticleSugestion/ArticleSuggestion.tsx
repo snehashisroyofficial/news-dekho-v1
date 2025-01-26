@@ -8,6 +8,7 @@ import { useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../Redux/store";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { CircularProgress } from "@mui/material";
 
 const ArticleSuggestion: React.FC = () => {
   const router = useRouter();
@@ -28,8 +29,6 @@ const ArticleSuggestion: React.FC = () => {
   const handleArticleClick = (articleId: string) => {
     router.push(`/article/${articleId}`);
   };
-
-  console.log("article full view suggestion", articles);
 
   return (
     <div>

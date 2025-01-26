@@ -10,3 +10,6 @@ npm install @reduxjs/toolkit react-redux
 npm install firebase@11.2.0 --save
 npm install @mui/icons-material @mui/material @emotion/styled @emotion/react
 npm i js-cookie
+npm install lodash
+npm i lodash.debounce
+npm i --save-dev @types/lodash

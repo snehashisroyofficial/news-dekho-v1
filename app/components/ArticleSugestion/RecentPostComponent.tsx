@@ -96,15 +96,6 @@ const RecentPostComponent: React.FC = () => {
     router.push(`/article/${id}`);
   };
 
-  if (loading) {
-    return (
-      <div className="flex justify-center items-center h-screen w-full">
-        <h1 className="font-noto-serif-bengali text-2xl">লোড হচ্ছে ......</h1>
-      </div>
-    );
-  }
-
-  if (loading && articles.length === 0) return <></>;
   if (error) return <Alert severity="error">{error}</Alert>;
 
   return (

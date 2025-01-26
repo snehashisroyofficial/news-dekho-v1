@@ -19,6 +19,7 @@ import {
 } from "../../Redux/Slice/article/recentPostArticlesSlice";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { CircularProgress } from "@mui/material";
 
 // article ts
 interface FullViewArticle {
@@ -97,13 +98,13 @@ const HomePageBanner: React.FC = () => {
     router.push(`/article/${id}`);
   };
 
-  //   if (loading || mainPostLoading || rightSideLoading) {
-  //     return (
-  //       <div className="flex justify-center items-center h-screen w-full">
-  //         <h1 className="font-noto-serif-bengali text-2xl">লোড হচ্ছে ......</h1>
-  //       </div>
-  //     );
-  //   }
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-screen ">
+        <CircularProgress />
+      </div>
+    );
+  }
 
   return (
     <div className="  flex flex-col md:flex-row  items-start justify-between gap-16  px-4 py-6 md:py-10 ">
@@ -162,9 +163,11 @@ const HomePageBanner: React.FC = () => {
             className="space-y-3 group overflow-hidden"
           >
             <div className="max-h-64  overflow-hidden rounded-2xl">
-              <img
+              <Image
                 src={item.image}
-                alt=""
+                alt={item.title}
+                height={1000}
+                width={1000}
                 className="w-full h-full object-cover group-hover:scale-105 transition duration-300 ease-in-out"
               />
             </div>
