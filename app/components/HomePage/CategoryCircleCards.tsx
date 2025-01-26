@@ -28,51 +28,24 @@ const CategoryCircleCards: React.FC = () => {
   };
 
   return (
-    <div className="flex items-center justify-start lg:justify-center gap-4 py-6 overflow-x-auto px-4 scrollbar-hide">
+    <div className="flex items-center justify-start lg:justify-center gap-4 py-6 overflow-x-scroll px-4 scrollbar-hide w-full">
       {categories.map((category) => (
-        <Box
+        <div
           key={category.id}
           onClick={() => handleCategoryClick(category.id)}
-          sx={{
-            width: 80,
-            height: 80,
-            marginRight: 2,
-            borderRadius: "100px",
-            overflow: "hidden",
-            position: "relative",
-            flexShrink: 0,
-            cursor: "pointer",
-          }}
+          className="min-w-[80px] h-20 overflow-hidden object-cover relative flex justify-center rounded-full border-2 border-red-700 cursor-pointer"
         >
           <Image
             src={category.imageUrl}
             alt={category.title}
             height={1000}
             width={1000}
-            className="object-cover rounded-full border-2 border-slate-200"
+            className="object-cover w-full h-full"
           />
-
-          <Typography
-            variant="body2"
-            color="#6e6e6e"
-            sx={{
-              position: "absolute",
-              bottom: 0,
-              left: 4,
-              right: 4,
-              textAlign: "center",
-              padding: "2px 4px",
-              borderRadius: "4px",
-              fontSize: "12px",
-              fontWeight: "bold",
-              fontFamily: "Noto Serif Bengali",
-              color: "black",
-              backgroundColor: "rgba(255, 255, 255, 0.7)",
-            }}
-          >
+          <h2 className="absolute z-10 text-xs font-bold bg-white w-full text-center bottom-0">
             {category.title}
-          </Typography>
-        </Box>
+          </h2>
+        </div>
       ))}
     </div>
   );

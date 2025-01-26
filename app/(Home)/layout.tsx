@@ -35,7 +35,7 @@ export default function RootLayout({
         <div className="font-noto-serif-bengali">
           <StoreProvider>
             <NavBar title="news prime times" />
-            <div className="border-2 border-green-300">{children}</div>
+            <div className="min-h-[calc(100vh-64px)]">{children}</div>
             <FooterSection />
           </StoreProvider>
         </div>
