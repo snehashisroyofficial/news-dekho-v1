@@ -70,7 +70,7 @@ const TopTopics = ({ topicTitle1, topicTitle2 }) => {
 
         {!topicsLoading && !topicsError && topCategories.length > 0 && (
           <div className="grid  grid-cols-1 md:grid-cols-2  gap-6 p-0 lg:px-4">
-            {topCategories.map((topic: any, idx) => (
+            {topCategories.map((topic, idx) => (
               <>
                 {topic.topic == topicTitle1 || topic.topic == topicTitle2 ? (
                   <div key={idx} className="">
@@ -84,7 +84,7 @@ const TopTopics = ({ topicTitle1, topicTitle2 }) => {
                           <>
                             <div
                               onClick={() => handleArticleClick(article.id)}
-                              key={idx}
+                              key={article.id}
                               className="flex flex-col md:flex-row md:items-center gap-4   shadow-md border bg-white cursor-pointer group"
                             >
                               <div className="h-40 overflow-hidden w-full md:w-1/3">

@@ -83,7 +83,7 @@ const StoryViewer: React.FC = () => {
               cursor: "pointer",
               flexShrink: 0, // Prevent images from shrinking on smaller screens
             }}
-            onClick={() => router.push(`/storyview?id=${story.id}`)}
+            onClick={() => router.push(`/stories?id=${story.id}`)}
           >
             {/* Line Indicator on top of each image */}
             <Box

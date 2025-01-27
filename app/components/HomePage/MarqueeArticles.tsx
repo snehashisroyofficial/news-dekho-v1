@@ -1,3 +1,4 @@
+"use client";
 import { fetchTop3Articles } from "@/app/Redux/Slice/article/bakingArticlesSlice";
 import { RootState } from "@/app/Redux/store";
 import { useRouter } from "next/navigation";

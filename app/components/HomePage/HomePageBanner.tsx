@@ -100,7 +100,7 @@ const HomePageBanner: React.FC = () => {
 
   if (loading) {
     return (
-      <div className="flex justify-center items-center h-screen ">
+      <div className="flex justify-center items-center h-screen  w-full z-20  ">
         <CircularProgress />
       </div>
     );
