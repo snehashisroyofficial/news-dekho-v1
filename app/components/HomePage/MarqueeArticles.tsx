@@ -1,13 +1,13 @@
 "use client";
 import { fetchTop3Articles } from "@/app/Redux/Slice/article/bakingArticlesSlice";
-import { RootState } from "@/app/Redux/store";
+import { AppDispatch, RootState } from "@/app/Redux/store";
 import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import WhatshotIcon from "@mui/icons-material/Whatshot";
 const MarqueeArticles: React.FC = () => {
   const router = useRouter();
-  const dispatch: AppDispatch = useDispatch();
+  const dispatch: AppDispatch = useDispatch<AppDispatch>();
 
   const { articles, loading, error } = useSelector(
     (state: RootState) => state.bakingArticles

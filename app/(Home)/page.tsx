@@ -3,7 +3,7 @@ import CategoryCircleCards from "../components/HomePage/CategoryCircleCards";
 import HomePageBanner from "../components/HomePage/HomePageBanner";
 import MarqueeArticles from "../components/HomePage/MarqueeArticles";
 import TopTopics from "../components/HomePage/TopTopics";
-import StoryViewer from "../components/HomePage/StoryViewer";
+// import StoryViewer from "../components/HomePage/StoryViewer";
 import TrendingArticles from "../components/HomePage/TrendingArticles";
 
 const Home = () => {
@@ -20,7 +20,7 @@ const Home = () => {
             ভিস্যুয়াল স্টোরি
           </h1>
         </div>
-        <StoryViewer />
+        {/* <StoryViewer /> */}
       </Box>
       <TopTopics topicTitle1={"পশ্চিমবঙ্গ"} topicTitle2={"বিনোদন"} />
       <TrendingArticles />

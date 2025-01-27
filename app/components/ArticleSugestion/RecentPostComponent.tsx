@@ -170,8 +170,8 @@ const RecentPostComponent: React.FC = () => {
         <DialogTitle>{selectedArticle?.title}</DialogTitle>
         <DialogContent>
           <Image
-            src={selectedArticle?.image}
-            alt={selectedArticle?.title}
+            src={selectedArticle?.image || "/assets/images/image-not-found.png"}
+            alt={selectedArticle?.title || "articles"}
             height={1000}
             width={1000}
             style={{ width: "100%", borderRadius: "8px" }}

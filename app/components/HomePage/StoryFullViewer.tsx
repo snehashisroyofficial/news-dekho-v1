@@ -1,5 +1,6 @@
+"use client";
 import React, { useState, useEffect } from "react";
-import { useSpring, animated } from "react-spring";
+import { useSpring, animated } from "@react-spring/web";
 import { useSwipeable } from "react-swipeable";
 import { Box, Button, Typography, IconButton } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
@@ -12,13 +13,13 @@ import PlayArrowIcon from "@mui/icons-material/PlayArrow"; // Import Play icon
 import PauseIcon from "@mui/icons-material/Pause"; // Import Pause icon
 
 import { useDispatch, useSelector } from "react-redux";
-import { fetchStoryData } from "../Redux/Slice/story/storySlice";
-import { AppDispatch, RootState } from "../Redux/store";
-import { useNavigate } from "react-router";
+import { fetchStoryData } from "../../Redux/Slice/story/storySlice";
+import { AppDispatch, RootState } from "../../Redux/store";
+import { useRouter } from "next/navigation";
 
 const StoryFullViewer: React.FC = () => {
   const dispatch: AppDispatch = useDispatch();
-  const navigate = useNavigate();
+  const router = useRouter();
   const { status, story, loading, error } = useSelector(
     (state: any) => state.myStory
   );
@@ -119,7 +120,7 @@ const StoryFullViewer: React.FC = () => {
   };
 
   const handleback = () => {
-    navigate(-1);
+    router.back();
   };
 
   if (loading) {
