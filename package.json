@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-     "build": "npm install --force && next build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -21,8 +21,8 @@
     "lodash": "^4.17.21",
     "lodash.debounce": "^4.0.8",
     "next": "15.1.6",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
     "react-redux": "^9.2.0",
     "react-swipeable": "^7.0.2"
   },
