@@ -19,7 +19,12 @@ import icon from "../assets/icon.jpeg";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-const TopTopics = ({ topicTitle1, topicTitle2 }) => {
+interface TopTopicsProps {
+  topicTitle1: string;
+  topicTitle2: string;
+}
+
+const TopTopics = ({ topicTitle1, topicTitle2 }: TopTopicsProps) => {
   const router = useRouter();
   const dispatch: AppDispatch = useDispatch();
   const {
