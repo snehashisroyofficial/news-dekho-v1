@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { useSpring, animated } from "react-spring";
+import { useSpring, animated } from "@react-spring/web";
 import { useSwipeable } from "react-swipeable";
 import { Box, Button, Typography, IconButton } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
