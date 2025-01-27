@@ -71,26 +71,38 @@ const ArticleFullView: React.FC = () => {
     router.push(`/topic?id=${categoryId}`);
   };
 
+  // whatsapp share
   const handleWhatsAppShare = () => {
     const url = getCurrentUrl();
+
+    const message = `${article?.title}\n${url}`;
+
     const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(
-      url
+      message
     )}`;
     window.open(whatsappUrl, "_blank");
   };
 
+  // facebook share
+
   const handleFacebookShare = () => {
     const url = getCurrentUrl();
+    const message = `${article?.title}\n${url}`;
+
     const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
       url
-    )}`;
+    )}&quote=${encodeURIComponent(message)}`;
+
     window.open(facebookUrl, "_blank");
   };
 
+  // twitter share
   const handleTwitterShare = () => {
     const url = getCurrentUrl();
+    const message = `${article?.title}\n${url}`;
+
     const twitterUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
-      url
+      message
     )}`;
     window.open(twitterUrl, "_blank");
   };

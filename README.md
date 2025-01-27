@@ -14,3 +14,5 @@ npm install lodash
 npm i lodash.debounce
 npm i --save-dev @types/lodash
 npm i colorthief
+npm i react-swipeable
+npm i react-spring

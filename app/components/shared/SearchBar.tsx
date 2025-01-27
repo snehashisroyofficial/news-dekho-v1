@@ -47,11 +47,7 @@ const Search: React.FC<SearchModalProp> = ({ closeModal }) => {
             পছন্দের বিষয় নিয়ে পড়ুন এবং আপডেট থাকুন
           </p>
         </div>
-        <form
-          onSubmit={handleFormSubmit}
-          action=""
-          className="w-full flex relative"
-        >
+        <form onSubmit={handleFormSubmit} className="w-full flex relative">
           <input
             type="text"
             name="text"

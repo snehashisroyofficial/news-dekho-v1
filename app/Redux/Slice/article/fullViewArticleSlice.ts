@@ -1,7 +1,6 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { db } from '../../../firebase/firebaseConfig'; 
-import { doc, getDoc, Timestamp } from 'firebase/firestore';
-
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { db } from "../../../firebase/firebaseConfig";
+import { doc, getDoc, Timestamp } from "firebase/firestore";
 
 interface FullViewArticle {
   category: string;
@@ -26,13 +25,11 @@ interface FullViewArticle {
   authorRole: string;
 }
 
-
 interface FullViewArticleState {
   article: FullViewArticle | null;
   loading: boolean;
   error: string | null;
 }
-
 
 const initialState: FullViewArticleState = {
   article: null,
@@ -40,27 +37,24 @@ const initialState: FullViewArticleState = {
   error: null,
 };
 
-
 export const fetchFullViewArticle = createAsyncThunk(
-  'article/fetchFullViewArticle',
+  "article/fetchFullViewArticle",
   async (articleId: string) => {
-    const docRef = doc(db, 'articles', articleId);
+    const docRef = doc(db, "articles", articleId);
     const docSnap = await getDoc(docRef);
-    
+
     if (docSnap.exists()) {
       const articleData = docSnap.data();
-      
-      
-      return articleData as FullViewArticle; 
+
+      return articleData as FullViewArticle;
     } else {
-      throw new Error('Article not found');
+      throw new Error("Article not found");
     }
   }
 );
 
-
 const fullViewArticleSlice = createSlice({
-  name: 'article',
+  name: "article",
   initialState,
   reducers: {},
   extraReducers: (builder) => {
@@ -75,10 +69,9 @@ const fullViewArticleSlice = createSlice({
       })
       .addCase(fetchFullViewArticle.rejected, (state, action) => {
         state.loading = false;
-        state.error = action.error.message || 'Failed to fetch article';
+        state.error = action.error.message || "Failed to fetch article";
       });
   },
 });
-
 
 export default fullViewArticleSlice.reducer;

@@ -114,7 +114,7 @@ const CategoryView: React.FC = () => {
   return (
     <>
       <div className="min-h-screen p-2  lg:p-6 font-noto-serif-bengali">
-        <div className="flex items-center flex-col md:flex-row  gap-6">
+        <div className="flex items-center flex-col md:flex-row flex-wrap justify-center  gap-6">
           {articles.map((item, idx) => (
             <div
               key={idx}

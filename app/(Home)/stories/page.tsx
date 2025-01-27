@@ -32,7 +32,7 @@ const StoryViewer: React.FC = () => {
   const [currentStoryIndex, setCurrentStoryIndex] = useState(0);
   const [progress, setProgress] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
-  const [bgColor, setBgColor] = useState<string>(""); // Store the background color
+  const [bgColor, setBgColor] = useState<string>(null); // Store the background color
 
   const theme = useTheme();
   const isDesktop = useMediaQuery(theme.breakpoints.up("md"));
